@@ -1,3 +1,5 @@
+// We're going to create our own pipe function!
+
 // Some basic functions for easily understand the pipe function.
 // We'll combine those three function and send the value 4 to it.
 // Getting result of - 'Numner 10'
@@ -5,8 +7,6 @@ const add1 = x => x + 1;
 const mul2 = x => x * 2;
 const title = x => `The number is: ${x}`;
 
-
-let x;
 
 // The most imperative and naive way of writing the pipe function
 // Calling the function with:
@@ -24,7 +24,7 @@ function pipe1 (array_of_fn) {
     }
 }
 
-x = pipe1([add1, mul2, title])(4); x
+x = pipe1([add1, mul2, title])(4); // 'The number is: 10'
 
 
 // let's use the rest operator
@@ -41,7 +41,7 @@ function pipe2 (...funcs) {
     }
 }
 
-x = pipe2(add1, mul2, title)(4); x
+x = pipe2(add1, mul2, title)(4); // 'The number is: 10'
 
 
 
@@ -106,39 +106,5 @@ const pipe = (first, ...more) =>
 // Two arguments function-
 const div = (x,y) => x / y;
 
-x = pipe(div, add1, mul2, title)(4,2); x 
-
-
-
-
-
-
-
-
-
-x = pipe1([add1, mul2, title])(4)
-x
-x = pipe2(add1, mul2, title)(4)
-x
-
-x = pipe3(add1, mul2, title)(4)
-x
-
-x = pipe4(add1, mul2, title)(4)
-x
-
-x = pipe5(add1, mul2, title)(4)
-x
-
-x = pipe6(add1, mul2, title)(4)
-x
-
-x = pipe(add1, mul2, title)(4)
-x
-
-
-x = pipe();
-
-
- 
+x = pipe(div, add1, mul2, title)(4,2); // 'The number is: 6'
  
